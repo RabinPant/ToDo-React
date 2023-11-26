@@ -1,7 +1,7 @@
 import ToDoRowItem from "./ToDoRowItem";
 
 const TodoTable = ({ todos }) => {
-  console.log("todos", todos);
+  console.log("passed data", todos);
   return (
     <table className="table table-hover">
       <thead>
@@ -12,7 +12,7 @@ const TodoTable = ({ todos }) => {
         </tr>
       </thead>
       <tbody>
-        {/* {todos.map((todo, id) => {
+        {todos.map((todo, id) => {
           return (
             <ToDoRowItem
               rowAssigned={todo.rowAssigned}
@@ -21,7 +21,7 @@ const TodoTable = ({ todos }) => {
               key={id}
             />
           );
-        })} */}
+        })}
       </tbody>
     </table>
   );

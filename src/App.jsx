@@ -9,6 +9,7 @@ function App() {
     { rowNumber: 2, rowDescription: "Water plants", rowAssigned: "User Two" },
     { rowNumber: 3, rowDescription: "Make dinner", rowAssigned: "User Three" },
   ]);
+  console.log("todos data from state", todos);
 
   const addData = () => {
     const newData = {
@@ -16,8 +17,8 @@ function App() {
       rowDescription: "Hello",
       rowAssigned: "User",
     };
-    setTodos(newData);
-    console.log(todos);
+    setTodos([...todos, newData]);
+    console.log("state value", todos);
   };
   return (
     <div className="container mt-5">
