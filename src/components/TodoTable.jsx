@@ -1,7 +1,6 @@
 import ToDoRowItem from "./ToDoRowItem";
 
 const TodoTable = ({ todos }) => {
-  console.log("passed data", todos);
   return (
     <table className="table table-hover">
       <thead>

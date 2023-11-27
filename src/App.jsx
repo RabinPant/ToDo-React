@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import ToDoRowItem from "./components/ToDoRowItem";
 import TodoTable from "./components/TodoTable";
+import NewTodoForm from "./components/NewTodoForm";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -11,11 +12,11 @@ function App() {
   ]);
   console.log("todos data from state", todos);
 
-  const addData = () => {
+  const addData = (assign, textArea) => {
     const newData = {
       rowNumber: todos.length + 1,
-      rowDescription: "Hello",
-      rowAssigned: "User",
+      rowDescription: textArea,
+      rowAssigned: assign,
     };
     setTodos([...todos, newData]);
     console.log("state value", todos);
@@ -29,6 +30,7 @@ function App() {
           <button className="btn btn-primary" onClick={addData}>
             Add new todo
           </button>
+          <NewTodoForm addToDo={addData} />
         </div>
       </div>
     </div>
