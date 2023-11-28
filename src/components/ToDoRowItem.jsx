@@ -1,6 +1,11 @@
-const ToDoRowItem = ({ rowNumber, rowDescription, rowAssigned }) => {
+const ToDoRowItem = ({
+  rowNumber,
+  rowDescription,
+  rowAssigned,
+  deleteTodo,
+}) => {
   return (
-    <tr>
+    <tr onClick={() => deleteTodo(rowNumber)}>
       <th scope="col">{rowNumber}</th>
       <td>{rowDescription}</td>
       <td>{rowAssigned}</td>

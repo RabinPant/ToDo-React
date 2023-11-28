@@ -21,12 +21,19 @@ function App() {
     setTodos([...todos, newData]);
     console.log("state value", todos);
   };
+
+  const deleteTodo = (deleteTodoRowNumber) => {
+    let filtered = todos.filter((value) => {
+      return value.rowNumber !== deleteTodoRowNumber;
+    });
+    setTodos(filtered);
+  };
   return (
     <div className="container mt-5">
       <div className="card">
         <div className="card-header">Your Todo's</div>
         <div className="card-body">
-          <TodoTable todos={todos} />
+          <TodoTable todos={todos} deleteTodo={deleteTodo} />
           <button className="btn btn-primary" onClick={addData}>
             Add new todo
           </button>
