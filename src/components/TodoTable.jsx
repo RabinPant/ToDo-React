@@ -1,7 +1,6 @@
 import ToDoRowItem from "./ToDoRowItem";
 
-const TodoTable = ({ todos }) => {
-  console.log("passed data", todos);
+const TodoTable = ({ todos, deleteTodo }) => {
   return (
     <table className="table table-hover">
       <thead>
@@ -19,6 +18,7 @@ const TodoTable = ({ todos }) => {
               rowDescription={todo.rowDescription}
               rowNumber={todo.rowNumber}
               key={id}
+              deleteTodo={deleteTodo}
             />
           );
         })}
